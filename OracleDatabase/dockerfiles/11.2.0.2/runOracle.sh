@@ -111,6 +111,10 @@ trap _term SIGTERM
 # Set SIGKILL handler
 trap _kill SIGKILL
 
+# Restore volume's owner back to oracle:dba
+# Added by eliu <eliuhy@163.com>
+chown -R oracle:dba $ORACLE_BASE/oradata
+
 # Check whether database already exists
 if [ -d $ORACLE_BASE/oradata/$ORACLE_SID ]; then
    symLinkFiles;
