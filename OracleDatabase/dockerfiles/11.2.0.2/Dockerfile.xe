@@ -61,9 +61,9 @@ RUN yum -y install unzip libaio bc initscripts net-tools openssl && \
     rpm -i Disk1/*.rpm &&    \
     mkdir $ORACLE_BASE/oradata && \
     chown -R oracle:dba $ORACLE_BASE && \
-    mv $INSTALL_DIR/$CONFIG_RSP $ORACLE_BASE/ && \
-    mv $INSTALL_DIR/$RUN_FILE $ORACLE_BASE/ && \
-    mv $INSTALL_DIR/$PWD_FILE $ORACLE_BASE/ && \
+    cp $INSTALL_DIR/$CONFIG_RSP $ORACLE_BASE/ && \
+    cp $INSTALL_DIR/$RUN_FILE $ORACLE_BASE/ && \
+    cp $INSTALL_DIR/$PWD_FILE $ORACLE_BASE/ && \
     ln -s $ORACLE_BASE/$PWD_FILE / && \
     cd $HOME && \
     rm -rf $INSTALL_DIR && \
